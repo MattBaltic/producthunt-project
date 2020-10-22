@@ -2,30 +2,34 @@
 
 {% block content %}
 
-{% if error%}
+{% if error %}
 {{ error }}
-<br><br>
+<br />
+<br />
 {% endif %}
 
 <h1>Sign up!</h1>
 
-<form method="POST" action="{% url 'signup' %}"> <!-- POST sending request to server and website react differently -->
-{% csrf_token %} <!-- protects website from different form of attack -->
+<form method="POST" action="{% url 'signup' %}">
 
-Username:
-<br />
-<input type="text" name="username" />
-<br />
-Password:
-<br>
-<input type="password" name="password1" />
-<br>
-Confirm Password:
-<br>
-<input type="password" name="password2" />
+    {% csrf_token %}
+
+    Username:
+    <br />
+    <input type="text" name="username" />
+    <br />
+    Password:
+    <br />
+    <input type="password" name="password1" />
+    <br />
+    Confirm Password:
+    <br />
+    <input type="password" name="password2" />
+
+
+    <br /><br />
+    <input class="btn btn-primary" type="submit" value="Sign Up!" />
+
 </form>
-<br>
-<br>
-<input class="btn btn-primary" type="submit" name="Sign Up!" />
 
 {% endblock %}
