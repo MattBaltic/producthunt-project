@@ -18,5 +18,5 @@ class Product(models.Model):
         return self.body[:100]
 
     def publication_date_notime(self):
-        return self.publication_date.strftime('%e %b %Y')
+        return self.pub_date.strftime('%e %b %Y')
         # skraca czas tylko do daty, posortowane przy uzyciu srtftime (https://strftime.org/)
